@@ -9,7 +9,7 @@ const ImageSearch = ({ searchText }) => {
   };
 
   return (
-    <div className=" m-2 ">
+    <div className=" my-2 ">
       <form onSubmit={onSubmit}>
         <input
           onChange={(e) => setText(e.target.value)}
