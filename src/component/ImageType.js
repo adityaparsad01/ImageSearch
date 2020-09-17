@@ -10,14 +10,14 @@ const ImageType = ({ searchType }) => {
 
   return (
     <>
-      <div className="col-12 g-6 m-auto  text-center">
+      <div className="col-12 p-3 mx-2 m-auto text-center">
         <button
           type="button"
           onClick={onSubmit}
           value="image"
-          className="btn btn-primary mx-2 "
+          className="btn btn-dark mx-2 "
         >
-          image
+          All
         </button>
         <button
           type="button"

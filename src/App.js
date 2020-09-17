@@ -11,8 +11,6 @@ const App = () => {
   const [term, setTerm] = useState("dog");
   const [type, setType] = useState("vector");
 
-  console.log(type);
-
   useEffect(() => {
     fetch(
       `https://pixabay.com/api/?key=${process.env.REACT_APP_API}&q=${term}+flowers&image_type=${type}&pretty=true`
