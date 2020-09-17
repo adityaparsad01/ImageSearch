@@ -9,8 +9,6 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [term, setTerm] = useState("");
 
-  console.log(term);
-
   useEffect(() => {
     fetch(
       `https://pixabay.com/api/?key=${process.env.REACT_APP_API}&q=${term}+flowers&image_type=photo&pretty=true`
