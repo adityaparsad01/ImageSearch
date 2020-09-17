@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 
-const ImageType = ({ searchType }) => {
+const ImageType = ({ searchType, length }) => {
   const [text, setText] = useState("");
+
+  console.log(length);
 
   const onSubmit = (e) => {
     setText(e.target.value);
@@ -10,6 +12,9 @@ const ImageType = ({ searchType }) => {
 
   return (
     <>
+      <div>
+        <h1>Total Result: {length || 0}</h1>
+      </div>
       <div className="col-12 p-3 mx-2 m-auto text-center">
         <button
           type="button"

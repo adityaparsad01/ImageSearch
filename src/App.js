@@ -28,7 +28,7 @@ const App = () => {
         <ImageSearch searchText={(text) => setTerm(text)} />
       </div>
       <div className="row">
-        <ImageType searchType={(text) => setType(text)} />
+        <ImageType length={image.length} searchType={(text) => setType(text)} />
       </div>
       <div className="row align-items-start">
         {!isLoading && image.length === 0 && (
