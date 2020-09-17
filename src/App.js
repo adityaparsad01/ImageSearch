@@ -3,15 +3,19 @@ import "./styles.css";
 import "bootstrap/dist/css/bootstrap.css";
 import ImageCard from "./component/ImageCard";
 import ImageSearch from "./component/ImageSearch";
+import ImageType from "./component/ImageType";
 
 const App = () => {
   const [image, setImage] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [term, setTerm] = useState("dog");
+  const [type, setType] = useState("vector");
+
+  console.log(type);
 
   useEffect(() => {
     fetch(
-      `https://pixabay.com/api/?key=${process.env.REACT_APP_API}&q=${term}+flowers&image_type=photo&pretty=true`
+      `https://pixabay.com/api/?key=${process.env.REACT_APP_API}&q=${term}+flowers&image_type=${type}&pretty=true`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -19,11 +23,14 @@ const App = () => {
         setIsLoading(false);
       })
       .catch((err) => console.log(err));
-  }, [term]);
+  }, [term, type]);
   return (
     <div className="container-fluid ">
       <div className="row">
         <ImageSearch searchText={(text) => setTerm(text)} />
+      </div>
+      <div className="row">
+        <ImageType searchType={(text) => setType(text)} />
       </div>
       <div className="row align-items-start">
         {!isLoading && image.length === 0 && (
