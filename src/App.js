@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import ImageCard from "./component/ImageCard";
 import ImageSearch from "./component/ImageSearch";
 import ImageType from "./component/ImageType";
+import loadinglogo from "./loading.gif";
 
 const App = () => {
   const [image, setImage] = useState([]);
@@ -32,12 +33,14 @@ const App = () => {
       </div>
       <div className="row align-items-start">
         {!isLoading && image.length === 0 && (
-          <h1>
-            search <strong className="text-secondary">{term}</strong> not Found
+          <h1 className="text-center mt-4">
+            search <strong className="text-info">{term}</strong> not Found
           </h1>
         )}
         {isLoading ? (
-          <h1>Loading...</h1>
+          <h1 className="text-center text-info mt-5">
+            <img src={loadinglogo} alt="loading" />
+          </h1>
         ) : (
           <>
             {image.map((image) => (
