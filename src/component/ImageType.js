@@ -41,7 +41,7 @@ const ImageType = ({ searchType }) => {
           value="illustration"
           className="btn btn-primary mx-2"
         >
-          illustration
+          illu
         </button>
       </div>{" "}
     </>
